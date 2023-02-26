@@ -8,7 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isRecipeView: boolean = true;
   title = 'recipebook';
-  updateView(status: boolean) {
-    this.isRecipeView = status;
-  }
 }

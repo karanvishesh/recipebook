@@ -7,6 +7,7 @@ export class RecipeService {
   constructor(public slService: ShoppingListService) {}
   private recipes: Recipe[] = [
     new Recipe(
+      1,
       'Chicken Biryani',
       'MouthWatering Recipes for you',
       'https://t4.ftcdn.net/jpg/04/18/22/51/240_F_418225186_OCtaNADfMMtBWBwTTOTJYcyjuRMQIqjW.jpg',
@@ -19,6 +20,7 @@ export class RecipeService {
       ]
     ),
     new Recipe(
+      2,
       'Vada Pav',
       'MouthWatering Recipes for you',
       'https://t3.ftcdn.net/jpg/02/65/32/14/240_F_265321464_aOkEw0Znzl9GXdBnh98bnDVU2xfIRqer.jpg',
@@ -33,6 +35,9 @@ export class RecipeService {
 
   getRecipe() {
     return this.recipes.slice();
+  }
+  getRecipeById(index: number) {
+    return this.recipes[index - 1];
   }
   selectedRecipe = new EventEmitter<Recipe>();
   addIngredientsToShoppingList(ingredients: Ingredient[]) {

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Recipe Book</a>
+    <a class="navbar-brand" [routerLink]="['/']">Recipe Book</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,29 +15,38 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#" (click)="updateView(true)">Recipes</a>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/recipes']"
+            >Recipes</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" (click)="updateView(false)">Shopping List</a>
-        </li>
-        <li class="nav-item dropdown navbar-right">
           <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/shopping-list']"
+            >Shopping List</a
           >
-            Manage
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Save Data</a>
-            <a class="dropdown-item" href="#">Fetch Data</a>
-          </div>
         </li>
+        <div class="btn-group" ngbDropdown>
+          <button
+            type="button"
+            ngbDropdownToggle
+            class="btn btn-default dropdown-toggle"
+            id="manage"
+          >
+            Manage <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" ngbDropdownMenu="manage">
+            <li ngbDropdownItem class="dropdown-item">
+              <a>Save Data</a>
+            </li>
+            <li ngbDropdownItem><a>Fetch Data</a></li>
+          </ul>
+        </div>
       </ul>
     </div>
   </div>

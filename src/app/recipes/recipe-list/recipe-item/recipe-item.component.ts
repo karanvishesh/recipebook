@@ -11,7 +11,7 @@ export class RecipeItemComponent {
   @Input()
   recipe: Recipe;
   constructor(public recipeService : RecipeService) {
-    this.recipe = new Recipe('', '', '',[]);
+    this.recipe = new Recipe(0, '', '', '',[]);
   }
   onSelectRecipe() {
     this.recipeService.selectedRecipe.emit(this.recipe);

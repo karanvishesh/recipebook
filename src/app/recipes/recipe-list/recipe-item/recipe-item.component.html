@@ -1,4 +1,8 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelectRecipe()">
+<a
+  style="cursor: pointer"
+  class="list-group-item clearfix"
+  [routerLink]="[recipe.id]"
+>
   <div class="d-flex flex-row justify-content-between">
     <div>
       <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
@@ -14,4 +18,3 @@
     </div>
   </div>
 </a>
-
